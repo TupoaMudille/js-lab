@@ -1,0 +1,14 @@
+div
+    h3 #{val['service']}
+    img(
+        src = 'images/' + val['image'],
+        width = '150',
+        height = '200'
+    )
+    p #{val['price']} RUB
+    p #{val['time']} min
+    a(href='serv?id='+val['id'])
+        button(
+            data-service_id = val['id']
+            style = 'size: 50%, magrin-bottom: 1rem'
+        ) больше

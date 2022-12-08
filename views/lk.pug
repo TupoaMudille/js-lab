@@ -1,0 +1,66 @@
+include header
+div
+    div
+        h2 Регистрация
+        form#reg
+            div
+                label(for='username') Name
+                    input(
+                        type='text',
+                        id='username',
+                        placeholder='Ваше имя'
+                    )
+            div
+                label(for='password') Password
+                    input(
+                        type='text',
+                        id='password',
+                        placeholder='Ваш пароль'
+                    )
+            div
+                label(for='email') Email
+                    input(
+                        type='text',
+                        id='email',
+                        placeholder='Ваша почта'
+                    )
+            div
+                label(for='num') Num
+                    input(
+                        type='text',
+                        id='num',
+                        placeholder='Ваш номер телефона'
+                    )
+            div
+                label(for='rule')
+                input(
+                    type='checkbox',
+                    id='rule',
+                    value='1'
+                )
+                span Terms and Conditions
+            div
+                button(type='submit') Зарегистрироваться
+
+    div
+        h2 Вход
+        form#enter
+            div
+                label(for='email2') Email
+                    input(
+                        type='text',
+                        id='email2',
+                        placeholder='Ваша почта'
+                    )
+            div
+                label(for='password2') Password
+                    input(
+                        type='text',
+                        id='password2',
+                        placeholder='Ваш пароль'
+                    )
+            div
+
+                button(type='submit') Войти
+//script(src='javascripts/lk.js')
+script(src='javascripts/lk2.js')

@@ -1,0 +1,53 @@
+include side_header
+h3 Запись
+div
+    p#idserv #{services[0]['service']}
+div
+    form#order(action='')
+        div
+            label(for='username') Name
+            input(
+                type='text',
+                id='username',
+                placeholder='Ваше имя'
+            )
+        div
+            label(for='phone') Phone
+            input(
+                type='text',
+                id='phone',
+                placeholder='+7()..-.'
+            )
+        div
+            span Время записи
+            select#time Time
+                - let arr = [];
+                - let arrA = ['9:00-10:00','10:00-11:00','11:00-12:00','14:00-15:00','16:00-17:00'];
+                each val in bb
+                    if (val['time'] == '9:00-10:00')||(val['time'] == '10:00-11:00')||(val['time'] == '11:00-12:00')||(val['time'] == '14:00-15:00')||(val['time'] == '16:00-17:00')
+                        if val['time'] == '9:00-10:00'
+                            - arr.push(val['time']);
+                        if val['time'] == '10:00-11:00'
+                            - arr.push(val['time']);
+                        if val['time'] == '11:00-12:00'
+                            - arr.push(val['time']);
+                        if val['time'] == '14:00-15:00'
+                            - arr.push(val['time']);
+                        if val['time'] == '16:00-17:00'
+                            - arr.push(val['time']);
+                - let difference = arrA.filter(x=>!arr.includes(x));
+                each val,index in difference
+                    option #{difference[index]}
+            if difference.length==0
+                span Мастер занят
+        div
+            label(for='rule')
+            input(
+                type='checkbox',
+                id='rule',
+                value='1'
+            )
+            span Terms and Conditions
+        div
+            button(type='submit') Записаться
+script(src='javascripts/order.js')

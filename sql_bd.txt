@@ -1,0 +1,38 @@
+//bd name bb_shop
+
+CREATE TABLE `bb` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` varchar(255) DEFAULT NULL,
+  `idserv` varchar(45) NOT NULL,
+  `clname` varchar(45) NOT NULL,
+  `num` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb3
+
+CREATE TABLE `category` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT 'null',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3
+
+CREATE TABLE `service` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `service` varchar(255) DEFAULT NULL,
+  `price` int NOT NULL,
+  `description` text,
+  `image` varchar(500) DEFAULT NULL,
+  `category` int DEFAULT NULL,
+  `time` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3
+
+CREATE TABLE `users` (
+  `idusers` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `num` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idusers`,`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3

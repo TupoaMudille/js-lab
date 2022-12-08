@@ -1,0 +1,15 @@
+include header
+div
+    table
+        each val, index in services
+            div
+                tr
+                    td
+                        div
+                            include card
+                        div
+                            a(href='order?id='+val['id'])
+                                button#call(
+                                    data-servid = val['id']
+                                ) записаться
+script(src='javascripts/carde.js')
