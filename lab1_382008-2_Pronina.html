@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1_task1_Pronina T.I.</title>
+    <style>
+        table th{   /*для хедера*/
+            padding: 20px; /*отступ*/
+            border: 20px groove green; /*границы*/
+            background: forestgreen; /*заливка*/
+            border-radius: 5px; /*скругление*/
+            font-size: 52px; /*размер шрифта*/
+        }
+        table td,tr{
+            padding: 20px;
+            border: 1px solid green;
+            border-radius: 5px;
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+<table id="some_table">
+    <caption>Karmen, chio-chio-san</caption>
+    <!--подпись к таблице-->
+</table>
+</body>
+</html>
+
+<script>
+    var some_table = document.querySelector('#some_table');
+    var some_array = [ ["Только", "ветер"], //первая строка - хедер
+                ["буйный", "поет"],
+                ["за", "кормой"] ]; //3 строка матрицы, но это 2 строчка для таблицы
+
+    buildTable(some_table, some_array); //функция создания таблицы
+
+    function buildTable(some_table, some_array) {
+        for (var k=0;k<some_array[0].length;k++){ //длина 0 элемента массива(подойдет любой, по факту это просто строчка)
+            var th = document.createElement('th'); //создание элемента table_header
+            th.innerHTML = some_array[0][k]; //инициализируем, 0 строка, столбцы меняем
+            some_table.appendChild(th);} //присоединяем к таблице
+
+        for (var i = 1; i <some_array.length; i++) { //длина всего массива, но первая строка уже 1, тк 0 занята под хидер
+            var tr = document.createElement('tr'); //создание элемента table_row, по сути расчерчиваем таблицу на строки
+            for (j = 0; j < some_array[0].length; j++) {  //работаем в пределах 2 столбцов
+                var td = document.createElement('td'); //создаем элемент table_data, теперь дочерчиваем таблицу вертикально
+                td.innerHTML = some_array[i][j]; //инициализируем
+                tr.appendChild(td); //в строку присоединяем данные
+                some_table.appendChild(tr); //в таблицу присоединяем полученнную строку
+            }
+        }
+    }
+</script>
+
